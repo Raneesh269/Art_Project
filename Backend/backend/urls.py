@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh/', TokenRefreshView.as_view()),
     path('api/', include('artworks.urls')),
+    path('api/users/', include('users.urls')),
 ]
 
 # ✅ ADD THIS LINE BELOW
