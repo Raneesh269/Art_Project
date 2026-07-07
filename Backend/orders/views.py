@@ -32,7 +32,10 @@ def create_order(request):
             status="paid",
         )
 
-    return Response({"message": "Order created"})
+    return Response({
+    "message": "Order created",
+    "items": items
+})
 
 @api_view(['GET'])
 def seller_orders(request):

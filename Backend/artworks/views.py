@@ -111,10 +111,14 @@ class ArtworkDetailView(generics.RetrieveUpdateDestroyAPIView):
 def create_order(request):
 
     items = request.data.get("items", [])
+    payment_method = request.data.get("payment_method", "UPI")
 
     for item in items:
 
         artwork = Artwork.objects.get(id=item["id"])
+
+        qty = int(item["quantity"])
+        total = float(artwork.price) * qty
 
         existing_order = Order.objects.filter(
             user=request.user,
@@ -124,10 +128,8 @@ def create_order(request):
 
         if existing_order:
 
-            existing_order.quantity += item["quantity"]
-
-            existing_order.total_price += float(item["price"])
-
+            existing_order.quantity += qty
+            existing_order.total_price += total
             existing_order.save()
 
         else:
@@ -135,15 +137,15 @@ def create_order(request):
             Order.objects.create(
                 user=request.user,
                 artwork=artwork,
-                quantity=item["quantity"],
-                total_price=item["price"],
+                quantity=qty,
+                total_price=total,
+                payment_method=payment_method,
                 status="paid"
             )
 
     return Response({
         "message": "Order created successfully"
     })
-
 
 # 👑 ADMIN USERS
 @api_view(['GET'])
