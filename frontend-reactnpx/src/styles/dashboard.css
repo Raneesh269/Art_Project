@@ -1,0 +1,143 @@
+.dashboard-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+
+  width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+  position: relative;
+  margin-top: 60px;
+}
+
+.dashboard-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  background: #161616;
+  border-radius: 16px;
+
+  padding: 15px;
+  margin-bottom: 15px;
+
+  flex-wrap: wrap;
+}
+
+.dashboard-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+.dashboard-item button {
+  min-width: 90px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.seller-dashboard-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #111;
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.seller-dashboard-page h2 {
+  margin-bottom: 20px;
+}
+
+.seller-dashboard-page h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.orders-page {
+  min-height: 100vh;
+  background: #050505;
+  padding: 30px;
+}
+
+.orders-title {
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.orders-close-btn {
+  background: #111;
+  color: white;
+  border: 1px solid #222;
+  padding: 15px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.orders-table {
+  background: #090909;
+  border: 1px solid #1b1b1b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.orders-header,
+.orders-row {
+  display: grid;
+  grid-template-columns:
+    60px
+    3fr
+    1fr
+    1fr
+    1fr
+    1.5fr
+    1fr
+    1fr;
+
+  align-items: center;
+}
+
+.orders-header {
+  color: white;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.orders-row {
+  background: #111;
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 25px 20px;
+}
+
+.status-pending {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 1px solid orange;
+  color: orange;
+}
+
+.status-paid {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 1px solid #00ff55;
+  color: #00ff55;
+}
